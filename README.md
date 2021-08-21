@@ -9,7 +9,7 @@ Python3、pytorch、GPU(如没有GPU提速，可以使用CPU版本，大概会�
 其他依赖包详见requirements.txt，值得注意的是，如果您使用GPU版本，请确认电脑cuda版本，cuda版本越高，所需的pytorch和torchvision的版本越高（我们的版本为python3.6.13，cuda11.0，torch1.7.0，torchvision0.8.0）。
 
 #网络架构
-卷积神经网络的架构由三个类似的块组成，如图1所示。第一个块是特征提取块(FEB, Feature extraction block)，然后是特征密集块(FDB, Feature dense block)和HDR重建块(HRB, HDR reconstruction block)。其中，使用全局残差跳过连接，绕过LDR的低级特征以指导最终层的Mask重构块。
+卷积神经网络的架构由三个类似的块组成，如图1所示。第一个块是特征提取块(FEB, Feature extraction block)，然后是特征密集块(FDB, Feature dense block)和HDR重建块(HRB, HDR reconstruction block)。其中，使用全局残差跳过连接，绕过LDR的低级特征以指导最终层的HDR重构块。
 
 ![image](https://user-images.githubusercontent.com/74043204/130308982-94dcef28-43fa-4c94-8465-26d84b6e1e95.png)
 图1 卷积神经网络结构
