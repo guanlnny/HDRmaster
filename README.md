@@ -11,7 +11,7 @@ Python3、pytorch、GPU(如没有GPU提速，可以使用CPU版本，大概会�
 #网络架构
 卷积神经网络的架构由三个类似的块组成，如图1所示。第一个块是特征提取块(FEB, Feature extraction block)，然后是特征密集块(FDB, Feature dense block)和HDR重建块(HRB, HDR reconstruction block)。其中，使用全局残差跳过连接，绕过LDR的低级特征以指导最终层的HDR重构块。
 
-![image](https://user-images.githubusercontent.com/74043204/130309328-2ffa0fb8-9588-41fb-b36b-850ce4c71ba2.png)
+![image](https://user-images.githubusercontent.com/74043204/130309352-f5651325-f14e-4918-bdd4-e447f300e545.png)
 图1 卷积神经网络结构
 
 值得一提的是，特征密集块FDB的结构如图2所示，其基本单元为膨胀密集块(DDB, Dilated Dense Block)。扩张的卷积有助于增加网络的接受域，DDB有助于利用输入的所有层次结构特性。除了两个1×1卷积层用于特征压缩外，每个DDB包含四个3×3膨胀的卷积层，每个卷积层都使用了之前所有层的信息，并且使用了密集的跳跃连接，如图3所示。由于密集的前向连接，这种特性的重用允许减少网络参数并提高学习能力。三个这样的DDB一起形成了这个网络的特征密集块。
